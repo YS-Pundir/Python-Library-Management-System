@@ -96,9 +96,10 @@ class member(Library):
                         for value ,feild in value.items():
                              if bookName in self.Borrowlist:
                                   self.Borrowlist.remove(bookName)
-         if not Memberfound:
+                                  print("The Book has Been returned")
+         if  Memberfound==True:
               print("Error : there is no such member ")
-         elif not bookfound:
+         elif  bookfound==True:
               print("Error:the Book has not been borrowed")
     
     def addMember(self):
