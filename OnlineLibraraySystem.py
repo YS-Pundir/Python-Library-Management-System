@@ -8,7 +8,58 @@ class Book:
 class Library():
     def __init__(self,name):
         self.name=name
-        self.listOfBooks=[["Death","Sadguru",35713,False],["Samadhi","OSHO",384333,False],["Sambhog","OSHO",283361,False]]
+        self.listOfBooks= [
+            ["Death", "Sadguru", "35713", False],
+            ["Samadhi", "OSHO", "384333", False],
+            ["Sambhog", "OSHO", "283361", False],
+            ["To Kill a Mockingbird", "Harper Lee", "9780446310789", False],
+            ["1984", "George Orwell", "9780451524935", False],
+            ["Pride and Prejudice", "Jane Austen", "9780141439518", False],
+            ["The Great Gatsby", "F. Scott Fitzgerald", "9780743273565", False],
+            ["Moby Dick", "Herman Melville", "9781503280786", False],
+            ["War and Peace", "Leo Tolstoy", "9781400079988", False],
+            ["The Catcher in the Rye", "J.D. Salinger", "9780316769488", False],
+            ["The Hobbit", "J.R.R. Tolkien", "9780547928227", False],
+            ["Fahrenheit 451", "Ray Bradbury", "9781451673319", False],
+            ["Brave New World", "Aldous Huxley", "9780060850524", False],
+            ["Jane Eyre", "Charlotte Bronte", "9780141441146", False],
+            ["Wuthering Heights", "Emily Bronte", "9780141439556", False],
+            ["Crime and Punishment", "Fyodor Dostoevsky", "9780143058144", False],
+            ["The Brothers Karamazov", "Fyodor Dostoevsky", "9780374528379", False],
+            ["Anna Karenina", "Leo Tolstoy", "9780143035008", False],
+            ["Don Quixote", "Miguel de Cervantes", "9780060934347", False],
+            ["The Odyssey", "Homer", "9780140268867", False],
+            ["Ulysses", "James Joyce", "9780199535675", False],
+            ["The Divine Comedy", "Dante Alighieri", "9780142437223", False],
+            ["The Iliad", "Homer", "9780140275360", False],
+            ["Les Misérables", "Victor Hugo", "9780451419439", False],
+            ["The Count of Monte Cristo", "Alexandre Dumas", "9780140449266", False],
+            ["Great Expectations", "Charles Dickens", "9780141439563", False],
+            ["A Tale of Two Cities", "Charles Dickens", "9780141439600", False],
+            ["The Picture of Dorian Gray", "Oscar Wilde", "9780141439570", False],
+            ["Frankenstein", "Mary Shelley", "9780141439471", False],
+            ["Dracula", "Bram Stoker", "9780141439846", False],
+            ["The Adventures of Huckleberry Finn", "Mark Twain", "9780142437179", False],
+            ["The Adventures of Tom Sawyer", "Mark Twain", "9780143039563", False],
+            ["Heart of Darkness", "Joseph Conrad", "9780141441672", False],
+            ["Catch-22", "Joseph Heller", "9781451626650", False],
+            ["The Lord of the Rings", "J.R.R. Tolkien", "9780544003415", False],
+            ["One Hundred Years of Solitude", "Gabriel Garcia Marquez", "9780060883287", False],
+            ["The Alchemist", "Paulo Coelho", "9780061122415", False],
+            ["The Kite Runner", "Khaled Hosseini", "9781594631931", False],
+            ["The Da Vinci Code", "Dan Brown", "9780307474278", False],
+            ["Harry Potter and the Sorcerer's Stone", "J.K. Rowling", "9780590353427", False],
+            ["The Hunger Games", "Suzanne Collins", "9780439023481", False],
+            ["The Girl with the Dragon Tattoo", "Stieg Larsson", "9780307949486", False],
+            ["Gone Girl", "Gillian Flynn", "9780307588371", False],
+            ["The Shining", "Stephen King", "9780307743657", False],
+            ["It", "Stephen King", "9781501142970", False],
+            ["Dune", "Frank Herbert", "9780441172719", False],
+            ["The Hitchhiker's Guide to the Galaxy", "Douglas Adams", "9780345391803", False],
+            ["The Road", "Cormac McCarthy", "9780307387899", False],
+            ["Life of Pi", "Yann Martel", "9780156027328", False],
+            ["The Book Thief", "Markus Zusak", "9780375831003", False]
+        ]
         
        
         
@@ -45,7 +96,23 @@ class Library():
 class member(Library):
     def __init__(self,name):
         super().__init__(name)
-        self.member_info={"Yuvraj Singh":{"id":"12345"},"Rohit":{"id":"67890"},"singh":{"id":"111213"}}
+        self.member_info= {
+    "Yuvraj Singh": {"id": "12345"},
+    "Rohit Sharma": {"id": "67890"},
+    "Virat Kohli": {"id": "111213"},
+    "MS Dhoni": {"id": "141516"},
+    "Rahul Dravid": {"id": "171819"},
+    "Sachin Tendulkar": {"id": "202122"},
+    "Sunil Gavaskar": {"id": "232425"},
+    "Kapil Dev": {"id": "262728"},
+    "Anil Kumble": {"id": "293031"},
+    "Virender Sehwag": {"id": "323334"},
+    "Gautam Gambhir": {"id": "353637"},
+    "Harbhajan Singh": {"id": "383940"},
+    "Zaheer Khan": {"id": "414243"},
+    "Yuzvendra Chahal": {"id": "444546"},
+    "Jasprit Bumrah": {"id": "474849"}
+}
         self.Borrowlist=[]
         
     def Borrow(self):
