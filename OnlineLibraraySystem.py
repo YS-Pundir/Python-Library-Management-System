@@ -1,3 +1,4 @@
+import json
 class Book:
     def __init__(self,Title,Auther,isbn,is_borrowed):
         self.Title=Title
@@ -61,6 +62,9 @@ class Library():
             ["The Book Thief", "Markus Zusak", "9780375831003", False]
         ]
         
+    def save_books(self):
+        with open("Book_Data.txt","w") as file:
+            json.dump(self.listOfBooks,file)
        
         
     def addBooks(self):
@@ -75,6 +79,7 @@ class Library():
             ISBN=input("enter the isbn of the book :",)
 
             self.listOfBooks.append([Title,Auther,ISBN,False])
+            self.save_books()
             print(f"<><><>The Book {Title} has been added successfully <><><>")
 
     def show(self):
@@ -87,6 +92,7 @@ class Library():
         for i in self.listOfBooks:
             if book==i[0]:
                 self.listOfBooks.remove(i)
+                self.save_books()
                 found=True
         if  found:
             print("The book has been removed")
@@ -114,6 +120,10 @@ class member(Library):
     "Jasprit Bumrah": {"id": "474849"}
 }
         self.Borrowlist=[]
+     
+    def save_memberinfo(self):
+        with open("Member_Data.txt","w") as file:
+            json.dump(self.member_info,file)
         
     def Borrow(self):
         member_name=input("Please enter the member's name :",)
@@ -129,6 +139,7 @@ class member(Library):
                     if i[0] == Bookname:
                         self.Borrowlist.append(Bookname)
                         self.member_info[member_name]["Book Collection"]=self.Borrowlist
+                        self.save_memberinfo()
                         print(f"The book {self.Borrowlist} has been Borrowed")
                         bookfound=True
                         break
@@ -163,6 +174,7 @@ class member(Library):
                         for value ,feild in value.items():
                              if bookName in self.Borrowlist:
                                   self.Borrowlist.remove(bookName)
+                                  self.save_memberinfo()
                                   print("The Book has Been returned")
          if  Memberfound==True:
               print("Error : there is no such member ")
@@ -176,20 +188,37 @@ class member(Library):
              print(f"Member {membername} alreadyb exsist .")
 
         self.member_info[membername]={"id":memberID}
+        self.save_memberinfo()
 
     def RemoveMember(self):
          membername=input("Enter the name person --> ",)
          if membername not in self.member_info:
               print(f"The person {membername} is not the member of library")
          self.member_info.pop(membername,None)
+         self.save_memberinfo()
          print(f"The Person {membername} has been removed from the membership successfully ")
          
 
        
 def main():
      lib=member("<><><><><><>----City Central Library----<><><><><><>")
+     
+     #load books
+     try:
+         with open("Book_Data.txt","r") as file:
+             lib.listOfBooks=json.load(file)
+     except FileNotFoundError:
+         return []
+     #load member info
+     try :
+         with open("Member_Data.txt","r") as file:
+             lib.member_info=json.load(file)
+     except FileNotFoundError:
+         return []
+        
 
      while True:
+             
                
                print("\n" + "="*50)
                print()
